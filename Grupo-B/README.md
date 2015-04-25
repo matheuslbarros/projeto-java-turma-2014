@@ -1,7 +1,7 @@
 # projeto-java-turma-2014
 Integrantes:
 
-efochesa
+Eduardo Fochesato - efochesa - efochesa@gmail.com
 
 Marcelo Miguel - marmalves - marmalves@gmail.com
 
