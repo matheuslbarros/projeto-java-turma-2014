@@ -1,10 +1,30 @@
 package edu.uniritter.classificados.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Category {
-	private Long id;
+	
+        @Id
+	@Column(name="CATEGORY_ID")
+        private Long id;
+        
+        @OneToOne
+        @JoinColumn(name="PARENT_CATEGORY_ID")
 	private Category parentCategory;
+        
+        @Column(name="CATEGORY_NAME")
 	private String name;
+        
+        @Column(name="POSITION")
 	private Integer position;
+        
+        @Column(name="CAT_ENABLE")
 	private Boolean enabled;
 	
 	public Category() {

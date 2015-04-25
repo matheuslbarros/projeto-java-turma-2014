@@ -3,24 +3,58 @@ package edu.uniritter.classificados.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
 public class Item {
-	
+	@Id
+	@Column(name="ITEM_ID")
 	private Long id;
+        
+        @Column(name="ITEM_NAME")
 	private String name;
+        
+        @Column(name="ANNOUNCER_ID")
 	private User announcer;
+        
+        @ManyToOne
+	@JoinColumn(name="CATEGORY_ID")
 	private Category category;
+        
+        @Column(name="PUBLISHED")
 	private Date published;
+        
+        @Column(name="MODIFIED")
 	private Date modified;
+        
+        @Column(name="PRICE")
 	private BigDecimal price;
+        
+        @Column(name="CONTACT_NAME")
 	private String contactName;
+        
+        @Column(name="CONTACT_EMAIL")
 	private String contactEmail;
+        
+        @Column(name="ITEM_ACTIVE")
 	private Boolean active;
+        
+        @Column(name="EXPIRATION")
 	private Date expiration;
+        
+        @Column(name="DESCRIPTION")
 	private String description;
+        
+        @ManyToOne
+	@JoinColumn(name="LOCATION_ID")
 	private Location itemLocation;
-	private Set<ItemComment> comments;
-	private Set<ItemResource> resources;
+        
+	private Set<ItemComment> comments;    //VERIFICAR
+	private Set<ItemResource> resources;  //VERIFICAR
 	
 	public Item() {
 	}

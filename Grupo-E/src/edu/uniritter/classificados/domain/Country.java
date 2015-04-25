@@ -2,19 +2,27 @@ package edu.uniritter.classificados.domain;
 
 import java.io.Serializable;
 import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+@Entity
 public class Country implements Serializable {
 	
-	/**
-	 * 
-	 */
+	   
 	private static final long serialVersionUID = 1L;
 	
+        @Id
+	@Column(name="COUNTRY_ID")
 	private Long id;
-	private String name;
-	private Set<Region> regions;
 	
-	public Country() {
+        @Column(name="COUNTRY_NAME")
+	private String name;
+	private Set<Region> regions; //VERIFICAR
+           
+        
+        public Country() {
 	}
 	
 	public Country(Long id) {
