@@ -37,5 +37,12 @@ public class CityDAO {
 		return query.getResultList();
 	}
 	
+	public Long save(City city){
+		
+		em.persist(city);
+		
+		return city.getId();
+	}
+	
 	
 }

@@ -25,5 +25,18 @@ public class CityService {
 		return CityDTO.convertList(entities);
 	}
 	
+	public Long createCity(CityDTO cityDto){
+		
+		//TODO Salvar Contry
+		//TODO Salvar Region
+		//TODO Seter o Contry e Region salvados no objeto city
+		
+		City city = new City();
+		city.setName(cityDto.getName());
+		
+		
+		return cityDAO.save(city);
+	}
+	
 	
 }

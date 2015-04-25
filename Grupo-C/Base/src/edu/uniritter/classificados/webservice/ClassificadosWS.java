@@ -41,8 +41,7 @@ public class ClassificadosWS {
 	}
 	
 	public Long createCity(CityDTO city) {
-		//TODO Implementar
-		return null;
+		return cityService.createCity(city);
 	}
 	
 	/* COUNTRY */
