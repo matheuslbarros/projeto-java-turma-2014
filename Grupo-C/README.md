@@ -5,6 +5,6 @@ Diego Porto Ritzel (dipievil) dipi.evil@gmail.com
 
 brunofprusch
 
-jdemartini 
+Josué Demartini (jdemartini) josue.demartini@gmail.com
 
 matheuslbarros
