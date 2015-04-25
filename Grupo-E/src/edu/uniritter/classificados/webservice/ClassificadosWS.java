@@ -37,12 +37,20 @@ public class ClassificadosWS {
 	}
 	
 	public List<CityDTO> listAllCities() {
-		return cityService.listAllCities();
+            List<CityDTO> ret = null;
+            try{
+		ret = cityService.listAllCities();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return ret;
 	}
 	
 	public Long createCity(CityDTO city) {
-		//TODO Implementar
-		return null;
+               
+            cityService.createCity(city);
+            return new Long(1);
+		
 	}
 	
 	/* COUNTRY */

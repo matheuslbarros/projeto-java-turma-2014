@@ -31,11 +31,17 @@ public class CityDAO {
 	}
 
 	public List<City> listAllCities() {
-		TypedQuery<City> query = em.createQuery(
+    		TypedQuery<City> query = em.createQuery(
 				"select c from City c ", City.class);
 		
 		return query.getResultList();
 	}
+        
+        public void createCity(City city){
+            em.persist(city); // TODO DANDO PAU...
+        }
 	
 	
+        
+        
 }
