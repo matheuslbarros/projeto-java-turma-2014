@@ -2,6 +2,6 @@
 Integrantes:
 mvdfreitas
 rodrigodellinghausen
-viniciuskonig
+viniciuskonig - Vinícius König Ferreira - vinicius.konfer@gmail.com
 cnicolaidis
 msoaresinfor
