@@ -2,7 +2,7 @@
 Integrantes:
 mvdfreitas
 
-rodrigodellinghausen
+rodrigodellinghausen - Rodrigo Dellinghausen dellinghausen@gmail.com
 
 -> viniciuskonig - Vinícius König Ferreira - vinicius.konfer@gmail.com
 
