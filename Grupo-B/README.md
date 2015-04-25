@@ -7,4 +7,4 @@ Marcelo Miguel - marmalves - marmalves@gmail.com
 
 Guilherme Tutilo - guitutilo - guitutilo@gmail.com 
 
-TIago Farias - tofarias
+TIago Farias - tofarias - tiago.farias.poa@gmail.com
