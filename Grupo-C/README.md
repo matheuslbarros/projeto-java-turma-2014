@@ -7,4 +7,4 @@ brunofprusch
 
 Josué Demartini (jdemartini) josue.demartini@gmail.com
 
-matheuslbarros
+Matheus Lisboa de Barros (matheuslbarros) matheuslbarros@gmail.com
