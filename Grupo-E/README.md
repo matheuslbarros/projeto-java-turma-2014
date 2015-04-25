@@ -1,2 +1,7 @@
 # projeto-java-turma-2014
-Teste...
+Integrantes:
+mvdfreitas
+rodrigodellinghausen
+viniciuskonig
+cnicolaidis
+msoaresinfor
