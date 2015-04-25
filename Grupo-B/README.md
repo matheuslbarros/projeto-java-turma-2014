@@ -2,5 +2,5 @@
 Integrantes:
 efochesa
 marmalves
-guitutilo
+Guilherme Tutilo - guitutilo - guitutilo@gmail.com
 tofarias
