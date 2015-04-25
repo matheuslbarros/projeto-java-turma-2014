@@ -2,5 +2,7 @@
 Integrantes:
 lucasschwalbe
 ramonms
-gustavoemmel
+
+gustavoemmel ( gremmel@gmail.com ) 
+
 jacaremonti
