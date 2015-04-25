@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.uniritter.classificados.domain.City;
+import edu.uniritter.classificados.domain.Country;
+import edu.uniritter.classificados.domain.Region;
 
 public class CityDTO {
 
@@ -64,4 +66,14 @@ public class CityDTO {
 		this.countryName = countryName;
 	}
 
+        public City toCity(){
+            City city = new City();
+            city.setId(null);            
+            city.setName(getName());
+            city.setCountry(new Country(new Long(1))); //TODO teste
+            city.setRegion(new Region(new Long(1))); //TODO teste
+            
+            return city;
+        }
+        
 }

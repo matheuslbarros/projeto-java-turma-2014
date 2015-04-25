@@ -24,6 +24,10 @@ public class CityService {
 		
 		return CityDTO.convertList(entities);
 	}
+        
+        public void createCity(CityDTO city){
+            cityDAO.createCity(city.toCity());
+        }
 	
 	
 }
