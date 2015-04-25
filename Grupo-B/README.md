@@ -1,2 +1,6 @@
 # projeto-java-turma-2014
-Teste...
+Integrantes:
+efochesa
+marmalves
+guitutilo
+tofarias
