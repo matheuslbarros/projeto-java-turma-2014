@@ -4,20 +4,30 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class City {
 	
 	@Id
+	@GeneratedValue
 	@Column(name="CITY_ID")
 	private Long id;
 	
 	@Column(name="CITY_NAME")
 	private String name;
-	private transient Region region;
-	private transient Country country;
+	
+	@ManyToOne
+	@JoinColumn(name="REGION_ID")
+	private Region region;
+	
+	@ManyToOne
+	@JoinColumn(name="COUNTRY_ID")
+	private Country country;
 	
 	@OneToMany(mappedBy="city")
 	private Set<CityArea> areas;

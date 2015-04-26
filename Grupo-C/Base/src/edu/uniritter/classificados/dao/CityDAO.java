@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import edu.uniritter.classificados.domain.City;
+import edu.uniritter.classificados.domain.Country;
 
 @Dependent
 public class CityDAO {
@@ -38,11 +39,16 @@ public class CityDAO {
 	}
 	
 	public Long save(City city){
-		
 		em.persist(city);
-		
 		return city.getId();
 	}
 	
+	public void update(City city){
+		em.merge(city);
+	}
+	
+	public void delete(City city){
+		em.remove(city);
+	}
 	
 }

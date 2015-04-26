@@ -3,15 +3,24 @@ package edu.uniritter.classificados.domain;
 import java.io.Serializable;
 import java.util.Set;
 
-public class Country implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Country {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	@Id
+	@GeneratedValue
+	@Column(name="COUNTRY_ID")
 	private Long id;
+	
+	@Column(name="COUNTRY_NAME")
 	private String name;
+	
+	@OneToMany(mappedBy="country")
 	private Set<Region> regions;
 	
 	public Country() {

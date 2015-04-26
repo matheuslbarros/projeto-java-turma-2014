@@ -7,15 +7,8 @@
 		<jta-data-source>jdbc/__default</jta-data-source>
 		
 		<class>edu.uniritter.classificados.domain.City</class>
-		
-		
-		<!--
-		Colocar aqui todas as classes de dominio que serao persistidas 
-		<class>...</class>
-		<class>...</class>
-		<class>...</class>
-		 -->
-		
+		<class>edu.uniritter.classificados.domain.Country</class>
+		<class>edu.uniritter.classificados.domain.Region</class>	
 		
 		<properties>
 		<!-- 

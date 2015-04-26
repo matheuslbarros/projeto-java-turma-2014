@@ -6,14 +6,19 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import edu.uniritter.classificados.dao.CityDAO;
+import edu.uniritter.classificados.dao.CountryDAO;
+import edu.uniritter.classificados.dao.RegionDAO;
 import edu.uniritter.classificados.domain.City;
+import edu.uniritter.classificados.domain.Country;
+import edu.uniritter.classificados.domain.Region;
 import edu.uniritter.classificados.dto.CityDTO;
 
 @Stateless
 public class CityService {
 	
-	@Inject
-	CityDAO cityDAO;
+	@Inject CityDAO cityDAO;
+	@Inject CountryDAO countryDAO;
+	@Inject RegionDAO regionDAO;
 	
 	public List<CityDTO> listCitiesByCountry(Long countryId) {
 		return null;
@@ -27,15 +32,28 @@ public class CityService {
 	
 	public Long createCity(CityDTO cityDto){
 		
-		//TODO Salvar Contry
-		//TODO Salvar Region
-		//TODO Seter o Contry e Region salvados no objeto city
+		//Cria e salva um Contry.
+		Country country = new Country();
+		country.setName(cityDto.getCountryName());
 		
+		countryDAO.save(country);
+
+		//Cria um region e salva utilizando o contry já criado e já salvo. 
+		Region region = new Region();
+		region.setCountry(country);
+		region.setName(cityDto.getRegionName());
+		
+		regionDAO.save(region);
+		
+		//Cria a city e salva a mesma utilizando o contry e a region já criados e salvos. 
 		City city = new City();
 		city.setName(cityDto.getName());
+		city.setCountry(country);
+		city.setRegion(region);
 		
+		cityDAO.save(city);
 		
-		return cityDAO.save(city);
+		return city.getId();
 	}
 	
 	
