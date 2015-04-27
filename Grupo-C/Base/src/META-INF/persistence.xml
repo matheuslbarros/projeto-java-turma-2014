@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="Classificados">
-		
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		
 		<jta-data-source>jdbc/__default</jta-data-source>
@@ -11,15 +10,14 @@
 		<class>edu.uniritter.classificados.domain.Region</class>	
 		
 		<properties>
-		<!-- 
+			<!-- 
 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/classifieds"/>
 			<property name="javax.persistence.jdbc.username" value="SA"/>
 			<property name="javax.persistence.jdbc.password" value="SA"/>
 			 -->
 			<property name="eclipselink.logging.level" value="INFO" />
+			<property name="hibernate.hbm2dll.auto" value="update" />
 		</properties>
-		
-		
 	</persistence-unit>
 </persistence>
