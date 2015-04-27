@@ -39,6 +39,7 @@ public class CityService {
 		
 		countryDAO.save(country);
 
+		
 		//TODO Antes de criar e salvar um region, verificar se já não exite um com o mesmo nome, se já exitir, buscar e utilizar o mesmo.		
 		//Cria um region e salva utilizando o contry já criado e já salvo. 
 		Region region = new Region();
@@ -46,6 +47,7 @@ public class CityService {
 		region.setName(cityDto.getRegionName());
 		
 		regionDAO.save(region);
+		
 		
 		//Cria a city e salva a mesma utilizando o contry e a region já criados e salvos. 
 		City city = new City();
