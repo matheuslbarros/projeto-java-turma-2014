@@ -32,12 +32,14 @@ public class CityService {
 	
 	public Long createCity(CityDTO cityDto){
 		
+		//TODO Antes de criar e salvar um country, verificar se já não exite um com o mesmo nome, se já exitir, buscar e utilizar o mesmo.
 		//Cria e salva um Contry.
 		Country country = new Country();
 		country.setName(cityDto.getCountryName());
 		
 		countryDAO.save(country);
 
+		//TODO Antes de criar e salvar um region, verificar se já não exite um com o mesmo nome, se já exitir, buscar e utilizar o mesmo.		
 		//Cria um region e salva utilizando o contry já criado e já salvo. 
 		Region region = new Region();
 		region.setCountry(country);
