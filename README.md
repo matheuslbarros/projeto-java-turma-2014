@@ -57,8 +57,12 @@ No browser, deve ser possível ver o WSDL em WSDL em http://localhost:8080/Class
 Verifique se o banco está rodando. Verifique se a string de conexão está configurada corretamente. O usuário e senha são em letras maiúsculas!
 
 ### Erro 404 no webservice
+Não identificado ainda como resolver. Até onde foi possível encontrar informação, é importante que apareça nos logs algo como a linha abaixo, indicando que o WS foi devidamente reconhecido pelo Glassfish:
+
+```
 2015-04-24T21:01:17.935-0300|Informações: Webservice Endpoint deployed ClassificadosWS
- listening at address at http://chimay:8080/Classificados/ClassificadosWSService.
+ listening at address at http://localhost:8080/Classificados/ClassificadosWSService.
+```
 
 ### Para resolver problema de compilação
 Botão direito no projeto -> Properties -> Targeted Runtimes -> Desmarcar um Glassfish e marcar o outro
