@@ -15,9 +15,9 @@ public class CityService {
 	@Inject
 	CityDAO cityDAO;
 	
-	public List<CityDTO> listCitiesByCountry(Long countryId) {
+	/*public List<CityDTO> listCitiesByCountry(Long countryId) {
 		return null;
-	}
+	}*/
 
 	public List<CityDTO> listAllCities() {
 		List<City> entities = cityDAO.listAllCities();

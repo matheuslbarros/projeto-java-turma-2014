@@ -14,6 +14,7 @@ import edu.uniritter.classificados.dto.ItemDTO;
 import edu.uniritter.classificados.dto.LocationDTO;
 import edu.uniritter.classificados.dto.RegionDTO;
 import edu.uniritter.classificados.dto.UserDTO;
+import edu.uniritter.classificados.service.CategoryService;
 import edu.uniritter.classificados.service.CityService;
 
 @WebService
@@ -21,6 +22,9 @@ public class ClassificadosWS {
 	
 	@EJB
 	CityService cityService;
+	
+	@EJB
+	CategoryService categoryService;
 	
 	// Seguir o padrao.
 	//
@@ -32,13 +36,14 @@ public class ClassificadosWS {
 	
 	/* CITY */
 	
-	public List<CityDTO> listCitiesByCountry(Long countryId) {
-		return cityService.listCitiesByCountry(countryId);
-	}
+	//Lista todas as cidades
+	//public List<CityDTO> listAllCities() {
+	//	return cityService.listAllCities();
+	//}
 	
-	public List<CityDTO> listAllCities() {
-		return cityService.listAllCities();
-	}
+	/*public List<CityDTO> listCitiesByCountry(Long countryId) {
+		return cityService.listCitiesByCountry(countryId);
+	}*/
 	
 	public Long createCity(CityDTO city) {
 		//TODO Implementar
@@ -112,8 +117,7 @@ public class ClassificadosWS {
 	/* CATEGORY */
 	
 	public List<CategoryDTO> listCategories() {
-		//TODO Implementar
-		return null;
+		return categoryService.listAllCategories();
 	}
 	
 	public Long createCategory(CategoryDTO category) {
