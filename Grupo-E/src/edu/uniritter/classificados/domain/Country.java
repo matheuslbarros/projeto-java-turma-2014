@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -19,7 +20,10 @@ public class Country implements Serializable {
 	
         @Column(name="COUNTRY_NAME")
 	private String name;
-	private Set<Region> regions; //VERIFICAR
+	
+        //TODO por enquanto fica transiente
+        @Transient
+        private Set<Region> regions; //VERIFICAR
            
         
         public Country() {

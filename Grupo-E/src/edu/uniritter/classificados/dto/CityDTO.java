@@ -68,7 +68,7 @@ public class CityDTO {
 
         public City toCity(){
             City city = new City();
-            city.setId(null);            
+            city.setId(this.getId());            
             city.setName(getName());
             city.setCountry(new Country(new Long(1))); //TODO teste
             city.setRegion(new Region(new Long(1))); //TODO teste

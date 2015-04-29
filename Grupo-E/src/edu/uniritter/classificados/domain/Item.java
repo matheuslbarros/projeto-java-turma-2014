@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Item {
@@ -26,9 +29,11 @@ public class Item {
 	private Category category;
         
         @Column(name="PUBLISHED")
+        @Temporal(TemporalType.TIMESTAMP)
 	private Date published;
         
         @Column(name="MODIFIED")
+        @Temporal(TemporalType.TIMESTAMP)
 	private Date modified;
         
         @Column(name="PRICE")
@@ -44,15 +49,19 @@ public class Item {
 	private Boolean active;
         
         @Column(name="EXPIRATION")
+        @Temporal(TemporalType.DATE)
 	private Date expiration;
         
         @Column(name="DESCRIPTION")
 	private String description;
         
-        @ManyToOne
-	@JoinColumn(name="LOCATION_ID")
+        //TODO falta criar a entidade Location
+//        @ManyToOne
+//	@JoinColumn(name="LOCATION_ID")
+        @Transient
 	private Location itemLocation;
         
+        @Transient
 	private Set<ItemComment> comments;    //VERIFICAR
 	private Set<ItemResource> resources;  //VERIFICAR
 	

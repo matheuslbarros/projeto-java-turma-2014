@@ -19,7 +19,7 @@ public class CityDAO {
 		
 		TypedQuery<City> query = em.createQuery(
 				//"select c from City c where c.country.countryId = :countryId", 
-				"select c from City c ", 
+				"select c from City c Order By c.name", 
 				City.class);
 		
 		//query.setParameter("countryId", countryId);
@@ -32,7 +32,7 @@ public class CityDAO {
 
 	public List<City> listAllCities() {
     		TypedQuery<City> query = em.createQuery(
-				"select c from City c ", City.class);
+				"select c from City c Order By c.name", City.class);
 		
 		return query.getResultList();
 	}

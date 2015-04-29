@@ -140,3 +140,10 @@ ALTER TABLE CITY ADD CONSTRAINT CITY_PK PRIMARY KEY (CITY_ID);
 
 ALTER TABLE ITEM_LOCATION ADD CONSTRAINT ITEM_LOCATION_PK PRIMARY KEY (ITEM_ID, LOCATION_ID);
 
+
+INSERT INTO country (country_name) values('Argentina');
+INSERT INTO country (country_name) values('Brasil');
+INSERT INTO country (country_name) values('Chile');
+INSERT INTO country (country_name) values('Equador');
+INSERT INTO country (country_name) values('Estados Unidos');
+INSERT INTO country (country_name) values('Uruguai');

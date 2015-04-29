@@ -15,21 +15,24 @@ import edu.uniritter.classificados.dto.LocationDTO;
 import edu.uniritter.classificados.dto.RegionDTO;
 import edu.uniritter.classificados.dto.UserDTO;
 import edu.uniritter.classificados.service.CityService;
+import edu.uniritter.classificados.service.CountryService;
+import edu.uniritter.classificados.service.RegionService;
+import java.util.logging.Logger;
 
 @WebService
 public class ClassificadosWS {
 	
+    private static final Logger LOG = Logger.getLogger(ClassificadosWS.class.getName());
+    
 	@EJB
-	CityService cityService;
+	private CityService cityService;
+        
+	@EJB
+	private CountryService countryService;
 	
-	// Seguir o padrao.
-	//
-	//@EJB
-	//CountryService countryService;
-	//
-	// etc...
-	
-	
+	@EJB
+        private RegionService regionService;
+        
 	/* CITY */
 	
 	public List<CityDTO> listCitiesByCountry(Long countryId) {
@@ -56,27 +59,25 @@ public class ClassificadosWS {
 	/* COUNTRY */
 	
 	public List<CountryDTO> listCountries() {
-		//TODO Implementar
-		return null;
+            LOG.info("listCountries...");
+            return countryService.listAllCountries();
 	}
 	
 	/* CITYAREA */
 	
 	public List<CityAreaDTO> listCityAreasByCity(Long cityId) {
-		//TODO Implementar
-		return null;
+                //TODO Implementar
+                return null;
 	}
 	
 	/* REGION */
 	
 	public List<RegionDTO> listRegionsByCountry(Long countryId) {
-		//TODO Implementar
-		return null;
+            return regionService.listRegionsByCountry(countryId);
 	}
 	
 	public Long createRegion(RegionDTO region) {
-		//TODO Implementar
-		return null;
+            return regionService.createRegion(region);
 	}
 	
 	/* LOCATION */

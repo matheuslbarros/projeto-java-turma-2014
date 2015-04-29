@@ -3,6 +3,8 @@ package edu.uniritter.classificados.domain;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,6 +13,7 @@ import javax.persistence.ManyToOne;
 public class Region implements Serializable {
 	
         @Id
+        @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="REGION_ID")
 	private Long id;
         
@@ -22,8 +25,8 @@ public class Region implements Serializable {
 	private Country country;
 	
         
-	public Region() {
-	}
+	public Region() {}
+        
 	public Region(Long id) {
 		this.id = id;
 	}
