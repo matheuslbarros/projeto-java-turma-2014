@@ -4,7 +4,10 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,8 +20,11 @@ public class City {
 	@Column(name="CITY_NAME")
 	private String name;
 	private transient Region region;
-	private transient Country country;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="COUNTRY_ID")
+	private Country country;
+		
 	@OneToMany(mappedBy="city")
 	private Set<CityArea> areas;
 	

@@ -15,24 +15,23 @@ public class CityDAO {
 	@PersistenceContext(unitName="Classificados")
 	private EntityManager em;
 	
-	/*public List<City> listCitiesByCountry(Long countryId) {
+	public List<City> listCitiesByCountry(Long countryId) {
 		
 		TypedQuery<City> query = em.createQuery(
-				//"select c from City c where c.country.countryId = :countryId", 
-				"select c from City c ", 
+				"select c from City c where c.country.id = :countryId",
 				City.class);
 		
-		//query.setParameter("countryId", countryId);
+		query.setParameter("countryId", countryId);
 		
 		List<City> cities = query.getResultList();
 		
 		return cities;
 		
-	}*/
+	}
 
 	public List<City> listAllCities() {
 		TypedQuery<City> query = em.createQuery(
-				"select * from City c ", City.class);
+				"select c from City c", City.class);
 		
 		return query.getResultList();
 	}

@@ -1,8 +1,15 @@
 package edu.uniritter.classificados.domain;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Country implements Serializable {
 	
 	/**
@@ -10,9 +17,16 @@ public class Country implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@JoinColumn(name="COUNTRY_ID")
 	private Long id;
+	
+	@JoinColumn(name="COUNTRY_NAME")
 	private String name;
-	private Set<Region> regions;
+	private transient Set<Region> regions;
+	
+	@OneToMany(mappedBy="country")
+	private Collection<City> city;
 	
 	public Country() {
 	}
