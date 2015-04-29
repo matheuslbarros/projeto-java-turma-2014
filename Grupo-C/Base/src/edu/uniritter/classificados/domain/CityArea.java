@@ -10,25 +10,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CITY_AREA")
+@Table(name = "CITY_AREA")
 public class CityArea implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3689724238847438328L;
 
 	@Id
-	@Column(name="CITY_AREA_ID")
+	@Column(name = "CITY_AREA_ID")
 	private Long id;
-	
-	@Column(name="CITY_AREA_NAME")
+
+	@Column(name = "CITY_AREA_NAME")
 	private String name;
-	
+
 	@ManyToOne
-	@JoinColumn(name="CITY_ID")
+	@JoinColumn(name = "CITY_ID")
 	private City city;
-	
+
 	public CityArea() {
 	}
-	
+
 	public CityArea(Long id) {
 		this.id = id;
 	}
@@ -56,6 +59,5 @@ public class CityArea implements Serializable {
 	public void setCity(City city) {
 		this.city = city;
 	}
-	
-	
+
 }

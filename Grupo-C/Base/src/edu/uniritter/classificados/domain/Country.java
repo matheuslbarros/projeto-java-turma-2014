@@ -6,26 +6,34 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class Country {
-	
+@Table(name = "COUNTRY")
+public class Country implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5130975355197458298L;
+
 	@Id
-	@GeneratedValue
-	@Column(name="COUNTRY_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "COUNTRY_ID")
 	private Long id;
-	
-	@Column(name="COUNTRY_NAME")
+
+	@Column(name = "COUNTRY_NAME")
 	private String name;
-	
-	@OneToMany(mappedBy="country")
+
+	@OneToMany(mappedBy = "country")
 	private Set<Region> regions;
-	
+
 	public Country() {
 	}
-	
+
 	public Country(Long id) {
 		this.id = id;
 	}
@@ -53,6 +61,5 @@ public class Country {
 	public void setRegions(Set<Region> regions) {
 		this.regions = regions;
 	}
-	
 
 }
