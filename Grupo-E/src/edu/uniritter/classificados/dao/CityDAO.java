@@ -38,7 +38,7 @@ public class CityDAO {
 	}
         
         public void createCity(City city){
-            em.persist(city); // TODO DANDO PAU...
+            em.persist(city);
         }
 	
 	

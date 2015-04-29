@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -11,11 +13,14 @@ import javax.persistence.OneToMany;
 public class City {
 	
 	@Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CITY_ID")
 	private Long id;
 	
 	@Column(name="CITY_NAME")
 	private String name;
+        
+        //TODO ajustar o relacionamento com Region e Country
 	private transient Region region;
 	private transient Country country;
 	
