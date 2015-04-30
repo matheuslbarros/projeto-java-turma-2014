@@ -33,7 +33,7 @@ public class CityDAO {
 		TypedQuery<City> query = em.createQuery(
 				"select c from City c", City.class);
 		
-		return query.getResultList();
+	    return query.getResultList();
 	}
 	
 	

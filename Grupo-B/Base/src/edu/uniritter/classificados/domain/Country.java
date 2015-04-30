@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -18,10 +19,10 @@ public class Country implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@JoinColumn(name="COUNTRY_ID")
+	@Column(name="COUNTRY_ID")
 	private Long id;
 	
-	@JoinColumn(name="COUNTRY_NAME")
+	@Column(name="COUNTRY_NAME")
 	private String name;
 	private transient Set<Region> regions;
 	
