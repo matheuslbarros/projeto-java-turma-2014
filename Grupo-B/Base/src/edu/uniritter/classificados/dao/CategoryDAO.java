@@ -16,8 +16,8 @@ public class CategoryDAO {
 	private EntityManager em;
 
 	public List<Category> listAllCategories() {
-		TypedQuery<Category> query = em.createQuery(
-				"select c from Category c ", Category.class);
+		
+		TypedQuery<Category> query = em.createQuery("select ca from Category ca ", Category.class);
 		
 		return query.getResultList();
 	}

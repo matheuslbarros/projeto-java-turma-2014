@@ -116,6 +116,7 @@ public class ClassificadosWS {
 	
 	/* CATEGORY */
 	
+	//Lista todas as categorias
 	public List<CategoryDTO> listCategories() {
 		return categoryService.listAllCategories();
 	}

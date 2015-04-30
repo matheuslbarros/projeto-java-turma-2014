@@ -1,9 +1,20 @@
 package edu.uniritter.classificados.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
+	
+	@Id
+	@Column(name="CATEGORY_ID")
 	private Long id;
-	private Category parentCategory;
+	
+	@Column(name="CATEGORY_NAME")
 	private String name;
+	
+	private Category parentCategory;
 	private Integer position;
 	private Boolean enabled;
 	
