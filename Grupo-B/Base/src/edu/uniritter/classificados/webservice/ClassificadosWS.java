@@ -15,6 +15,7 @@ import edu.uniritter.classificados.dto.LocationDTO;
 import edu.uniritter.classificados.dto.RegionDTO;
 import edu.uniritter.classificados.dto.UserDTO;
 import edu.uniritter.classificados.service.CategoryService;
+import edu.uniritter.classificados.service.CityAreaService;
 import edu.uniritter.classificados.service.CityService;
 
 @WebService
@@ -25,6 +26,9 @@ public class ClassificadosWS {
 	
 	@EJB
 	CategoryService categoryService;
+	
+	@EJB
+	CityAreaService cityAreaService;
 	
 	// Seguir o padrao.
 	//
@@ -60,8 +64,7 @@ public class ClassificadosWS {
 	/* CITYAREA */
 	
 	public List<CityAreaDTO> listCityAreasByCity(Long cityId) {
-		//TODO Implementar
-		return null;
+		return cityAreaService.listCityAreasByCity(cityId);
 	}
 	
 	/* REGION */

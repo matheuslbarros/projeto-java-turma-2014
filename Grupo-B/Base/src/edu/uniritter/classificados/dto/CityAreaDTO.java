@@ -1,5 +1,10 @@
 package edu.uniritter.classificados.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.uniritter.classificados.domain.CityArea;
+
 public class CityAreaDTO {
 	
 	private Long id;
@@ -7,8 +12,27 @@ public class CityAreaDTO {
 	private Long cityId;
 	private String cityName;
 	
+	public static List<CityAreaDTO> convertList(List<CityArea> entities) {
+		List<CityAreaDTO> dtos = new ArrayList<CityAreaDTO>();
+		
+		for (CityArea entity : entities) {
+			dtos.add(new CityAreaDTO(entity));
+		}
+		
+		return dtos;
+	}
+	
 	public CityAreaDTO() {
 	}
+	
+	public CityAreaDTO(CityArea entity) {
+		
+		this.id = entity.getId();
+		this.cityName = entity.getCity().getName();
+		this.name = entity.getName();
+		
+	}
+	
 
 	public Long getId() {
 		return id;
@@ -41,6 +65,5 @@ public class CityAreaDTO {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-	
 	
 }
