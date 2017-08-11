@@ -42,6 +42,11 @@ Clicando na aba "Aliases", criar uma conexão com as configurações de acesso a
 
 Abrir e rodar o arquivo Script.sql para importar o schema do banco.
 
+##Iniciando o Derby no Glashfish
+Abra uma janela de comando na pasta bin do Glashfish.
+
+Execute 'asadmin start-database'.
+
 ### Instalação e config do SoapUI
 Baixar o SoapUI em (http://sourceforge.net/projects/soapui/files/soapui/5.1.3/SoapUI-5.1.3-windows-bin.zip/download) e descompactar.
 Abrir o projeto do SoapUI em SoapUI-project\Classificados-soapui-project.xml.
